@@ -1,0 +1,228 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #ece3e3;
+}
+
+a {
+  text-decoration: none;
+  display: flex;
+}
+
+body {
+  background-color: black;
+  min-height: 100vh;
+}
+
+.container {
+  width: min(100% - 15px, 1400px);
+  margin-inline: auto;
+}
+
+.button {
+  padding: 10px 20px;
+  color: #ece3e3;
+  font-weight: 600;
+  background-color: rgba(236, 227, 227, 0.1);
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: all 0.35s linear;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: rgba(236, 227, 227, 0.2);
+  border: 1px solid rgb(255, 255, 255);
+  color: #fff;
+}
+
+.bgWrap {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bgWrap img {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  opacity: 0.2;
+  filter: blur(5px);
+}
+
+/* <------------> */
+/* HEADER */
+/* <------------> */
+header {
+  padding: 30px 0;
+}
+header .container nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container nav img {
+  width: 75px;
+  height: 75px;
+  opacity: 0.75;
+}
+header .container nav .button {
+  padding: 10px 20px;
+}
+
+/* <------------> */
+/* //HEADER */
+/* <------------> */
+/* <------------> */
+/* MAIN */
+/* <------------> */
+main {
+  padding-top: 100px;
+  text-align: center;
+}
+
+.mainBanner h1 {
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+.mainBanner h1 span {
+  background: -webkit-linear-gradient(65deg, #a20e0e, #ea1919);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 2px 2px rgba(206, 19, 19, 0.4);
+}
+.mainBanner p {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.mainBanner input {
+  margin-bottom: 60px;
+  width: 320px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  color: #202020;
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  transition: all 0.35s linear;
+}
+.mainBanner input:focus {
+  box-shadow: 0 0 20px rgb(255, 255, 255);
+}
+.mainBanner input::placeholder {
+  font-size: 14px;
+  font-weight: 400;
+}
+.mainBanner h2 {
+  font-size: 30px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+/* <------------> */
+/* // MAIN */
+/* <------------> */
+/* <------------> */
+/* PROJECTS */
+/* <------------> */
+.projects {
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+}
+.projects .projectsBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 15px;
+}
+.projects .projectsBox .item {
+  display: flex;
+  gap: 15px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 15px;
+  padding: 15px;
+  text-align: left;
+  width: 30%;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 2px 2px 7px rgba(255, 255, 255, 0.3);
+}
+.projects .projectsBox .item:hover {
+  background-color: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.projects .projectsBox .item .bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.projects .projectsBox .item .bio .nameSector {
+  display: flex;
+  flex-direction: column;
+}
+.projects .projectsBox .item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.projects .projectsBox .item span {
+  font-size: 20px;
+  font-weight: 500;
+}
+.projects .projectsBox .item small {
+  font-size: 14px;
+  font-weight: 400;
+}
+.projects .button {
+  width: 160px;
+  padding: 10px;
+}
+
+/* <------------> */
+/* //PROJECTS */
+/* <------------> */
+/* <------------> */
+/* //FOOTER */
+/* <------------> */
+footer {
+  padding: 10px 0;
+}
+footer p a {
+  display: inline;
+  background: -webkit-linear-gradient(65deg, #a20e0e, #ef0505);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .container img {
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+}
+
+/* <------------> */
+/* //FOOTER */
+/* <------------> */
+
+/*# sourceMappingURL=style.css.map */
