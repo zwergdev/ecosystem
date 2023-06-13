@@ -115,8 +115,9 @@ main {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
   transition: all 0.35s linear;
 }
-.mainBanner input:focus {
+.mainBanner input:focus, .mainBanner input:hover {
   box-shadow: 0 0 20px rgb(255, 255, 255);
+  outline: none;
 }
 .mainBanner input::placeholder {
   font-size: 14px;
@@ -192,6 +193,20 @@ main {
 .projects .button {
   width: 160px;
   padding: 10px;
+}
+.projects .button.blinking {
+  animation: blinking 1.5s linear infinite;
+}
+@keyframes blinking {
+  0% {
+    border: 1px solid rgba(255, 255, 255, 0.45);
+  }
+  50% {
+    border: 1px solid rgb(255, 255, 255);
+  }
+  100% {
+    border: 1px solid rgba(255, 255, 255, 0.45);
+  }
 }
 
 /* <------------> */

@@ -109,8 +109,9 @@ main{
     font-weight: 600;
     box-shadow: 0 0 15px rgba(255, 255, 255, .5);
     transition: all .35s linear;
-    &:focus{
+    &:focus, &:hover{
       box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+      outline: none;
     }
     &::placeholder{
       font-size: 14px;
@@ -188,6 +189,20 @@ main{
   .button{
     width: 160px;
     padding: 10px;
+    &.blinking{
+      animation: blinking 1.5s linear infinite;
+      @keyframes blinking {
+        0%{
+          border: 1px solid rgba(255, 255, 255, 0.45);
+        }
+        50%{
+          border: 1px solid rgba(255, 255, 255, 1);
+        }
+        100%{
+          border: 1px solid rgba(255, 255, 255, 0.45);
+        }
+      }
+    }
   }
 }
 

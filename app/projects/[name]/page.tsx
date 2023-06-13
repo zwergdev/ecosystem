@@ -14,7 +14,7 @@ async function getData(name: string) {
 export async function generateMetadata({
 	params: {name}
 }: Props): Promise<Metadata> {
-	return {title: `App | ${name}`}
+	return {title: `Ecosystem | ${name}`}
 }
 
 export default async function Project({params: {name}}: Props) {

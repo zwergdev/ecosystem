@@ -1,7 +1,8 @@
 'use client'
-import {useState, FormEventHandler} from 'react'
+import {useState, useCallback, useEffect, ChangeEventHandler} from 'react'
 import {getProjectsBySearch} from '@/services/getProjects'
 import {Project} from '@/app/api/projects/projects'
+import debounce from 'lodash.debounce'
 
 type Props = {
 	onSearch: (value: Project[]) => void
@@ -10,22 +11,33 @@ type Props = {
 const ProjectSearch = ({onSearch}: Props) => {
 	const [search, setSearch] = useState<string>('')
 
-	const handleSubmit: FormEventHandler<HTMLFormElement> = async e => {
-		e.preventDefault()
-		const posts = await getProjectsBySearch(search)
-		onSearch(posts)
+	const debouncedGetProjectsBySearch = useCallback(
+		debounce(async (value: string) => {
+			const posts = await getProjectsBySearch(value)
+			onSearch(posts)
+		}, 400),
+		[]
+	)
+
+	useEffect(() => {
+		if (search !== '') {
+			debouncedGetProjectsBySearch(search)
+		}
+	}, [debouncedGetProjectsBySearch, search])
+
+	const handleSearch: ChangeEventHandler<HTMLInputElement> = e => {
+		setSearch(e.target.value)
 	}
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<>
 			<input
 				type='text'
 				placeholder='Search Zwerg Project'
 				value={search}
-				onChange={e => setSearch(e.target.value)}
+				onChange={e => handleSearch(e)}
 			/>
-			<button type='submit'>Search</button>
-		</form>
+		</>
 	)
 }
 

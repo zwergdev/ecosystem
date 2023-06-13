@@ -8,12 +8,29 @@ import ProjectSearch from '@/app/components/ProjectSearch'
 export default function Home() {
 	const [projects, setProjects] = useState<Project[]>([])
 	const [loading, setLoading] = useState(true)
+	const [showed, setShowed] = useState(false)
+	const [fetchingNew, setFetchingNew] = useState(false)
 
 	useEffect(() => {
-		getProjects()
-			.then(setProjects)
-			.finally(() => setLoading(false))
-	}, [])
+		if (!showed) {
+			getProjects('6')
+				.then(setProjects)
+				.finally(() => setLoading(false))
+		} else {
+			getProjects('999')
+				.then(setProjects)
+				.finally(() => setFetchingNew(false))
+		}
+	}, [showed])
+
+	const changeShowed = () => {
+		setShowed(!showed)
+		if (showed) {
+			setFetchingNew(false)
+		} else {
+			setFetchingNew(true)
+		}
+	}
 
 	return (
 		<main>
@@ -28,7 +45,15 @@ export default function Home() {
 				<ProjectSearch onSearch={setProjects} />
 				<h2>Zwerg Ecosystem</h2>
 			</section>
-			{loading ? <h1>Loading...</h1> : <Projects projects={projects} />}
+			<section className='container projects'>
+				{loading ? <h1>Loading...</h1> : <Projects projects={projects} />}
+				<button
+					className={fetchingNew ? 'button blinking' : 'button'}
+					onClick={changeShowed}
+					disabled={fetchingNew && true}>
+					{fetchingNew ? 'LOADING...' : showed ? 'HIDE' : 'SHOW MORE'}
+				</button>
+			</section>
 		</main>
 	)
 }

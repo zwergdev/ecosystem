@@ -1,5 +1,5 @@
-export const getProjects = async () => {
-	const response = await fetch('http://localhost:3000/api/projects')
+export const getProjects = async (size: string) => {
+	const response = await fetch(`http://localhost:3000/api/projects?s=${size}`)
 	if (!response.ok) {
 		throw new Error('Unable to fetch projects.')
 	}
