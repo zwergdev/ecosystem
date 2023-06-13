@@ -3,11 +3,9 @@ import {MouseEvent} from 'react'
 const buttons = [
 	{value: 'NFT'},
 	{value: 'DeFi'},
-	{value: 'Launchpad'},
-	{value: 'Meme'},
 	{value: 'Wallet'},
-	{value: 'Media'},
-	{value: 'Educative'}
+	{value: 'Marketplace'},
+	{value: 'Media'}
 ]
 
 type FiltersProps = {

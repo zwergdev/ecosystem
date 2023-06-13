@@ -12,10 +12,11 @@ export default function Home() {
 	const [loading, setLoading] = useState(true)
 	const [showed, setShowed] = useState(false)
 	const [fetchingNew, setFetchingNew] = useState(false)
+	const [activeInput, setActiveInput] = useState(false)
 
 	useEffect(() => {
 		if (!showed) {
-			getProjects('99')
+			getProjects('12')
 				.then(setProjects)
 				.finally(() => setLoading(false))
 		} else {
@@ -50,26 +51,34 @@ export default function Home() {
 			setFilter(value)
 		}
 		setShowed(false)
+		setActiveInput(false)
 	}
 
 	return (
 		<main>
 			<section className='container mainBanner'>
 				<h1>
-					EXPLORE THE <span>ZWERG</span> ECOSYSTEM
+					EXPL0RE
+					<br />
+					TH3<span>ZWERG</span>
+					<br />
+					EC0SYSTEM
 				</h1>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
 					deleniti!
 				</p>
-				<ProjectSearch onSearch={setProjects} />
-				<h2>Zwerg Ecosystem</h2>
+				<ProjectSearch
+					setActiveInput={setActiveInput}
+					onSearch={setProjects}
+					setFilter={setFilter}
+				/>
 			</section>
 			<section className='container projects'>
 				<Filters filter={filter} changeFilter={changeFilter} />
 				{loading ? '' : <Projects projects={projects} />}
 
-				{filter === '' ? (
+				{filter === '' && !activeInput ? (
 					<button
 						className={fetchingNew ? 'button blinking' : 'button'}
 						onClick={changeShowed}

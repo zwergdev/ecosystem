@@ -6,10 +6,13 @@ import debounce from 'lodash.debounce'
 
 type Props = {
 	onSearch: (value: Project[]) => void
+	setActiveInput: (value: boolean) => void
+	setFilter: (value: string) => void
 }
 
-const ProjectSearch = ({onSearch}: Props) => {
+const ProjectSearch = ({onSearch, setActiveInput, setFilter}: Props) => {
 	const [search, setSearch] = useState<string>('')
+	const [ready, setReady] = useState(false)
 
 	const debouncedGetProjectsBySearch = useCallback(
 		debounce(async (value: string) => {
@@ -20,13 +23,19 @@ const ProjectSearch = ({onSearch}: Props) => {
 	)
 
 	useEffect(() => {
-		if (search !== '') {
+		if (ready) {
 			debouncedGetProjectsBySearch(search)
+		}
+		if (search === '') {
+			setActiveInput(false)
 		}
 	}, [debouncedGetProjectsBySearch, search])
 
 	const handleSearch: ChangeEventHandler<HTMLInputElement> = e => {
 		setSearch(e.target.value)
+		setReady(true)
+		setActiveInput(true)
+		setFilter('')
 	}
 
 	return (

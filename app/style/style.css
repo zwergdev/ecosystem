@@ -2,7 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: #ece3e3;
+  color: #F3F1E5;
+  line-height: 120%;
 }
 
 a {
@@ -22,7 +23,6 @@ body {
 
 .button {
   padding: 10px 20px;
-  color: #ece3e3;
   font-weight: 600;
   background-color: rgba(236, 227, 227, 0.1);
   font-size: 18px;
@@ -82,16 +82,24 @@ header .container nav .button {
 /* MAIN */
 /* <------------> */
 main {
-  padding-top: 100px;
+  padding-top: 25px;
   text-align: center;
 }
 
+.mainBanner {
+  padding-bottom: 30px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+}
 .mainBanner h1 {
-  font-size: 60px;
-  font-weight: 800;
+  font-size: 120px;
+  font-weight: 900;
   margin-bottom: 30px;
+  line-height: 100%;
 }
 .mainBanner h1 span {
+  margin-left: 40px;
+  line-height: 100%;
   background: -webkit-linear-gradient(65deg, #a20e0e, #ea1919);
   -webkit-background-clip: text;
   background-clip: text;
@@ -100,11 +108,11 @@ main {
 }
 .mainBanner p {
   font-size: 20px;
+  margin: auto auto 30px auto;
+  max-width: 50%;
   font-weight: 500;
-  margin-bottom: 30px;
 }
 .mainBanner input {
-  margin-bottom: 60px;
   width: 320px;
   padding: 10px;
   font-size: 20px;
@@ -112,6 +120,8 @@ main {
   border: 1px solid #000000;
   color: #202020;
   font-weight: 600;
+  background-color: #F3F1E5;
+  outline: none;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
   transition: all 0.35s linear;
 }
@@ -122,12 +132,6 @@ main {
 .mainBanner input::placeholder {
   font-size: 14px;
   font-weight: 400;
-}
-.mainBanner h2 {
-  font-size: 30px;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
 }
 
 /* <------------> */
@@ -155,7 +159,7 @@ main {
 .projects .projectsBox {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 30px;
   margin-bottom: 15px;
 }
@@ -167,7 +171,7 @@ main {
   border-radius: 15px;
   padding: 15px;
   text-align: left;
-  flex: 1 1 20%;
+  flex: 0 1 calc(25% - 23px);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   cursor: pointer;
@@ -175,9 +179,13 @@ main {
   box-shadow: 2px 2px 7px rgba(255, 255, 255, 0.3);
 }
 .projects .projectsBox .item:hover {
-  background-color: rgba(255, 255, 255, 0.45);
+  background-color: transparent;
   border: 1px solid rgb(255, 255, 255);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.projects .projectsBox .item:hover img {
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 20px white;
 }
 .projects .projectsBox .item .bio {
   display: flex;
@@ -193,6 +201,8 @@ main {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  border: 1px solid transparent;
+  transition: all 0.3s ease-in-out;
 }
 .projects .projectsBox .item span {
   font-size: 20px;
@@ -246,12 +256,15 @@ footer .container img {
 @keyframes blinking {
   0% {
     border: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   }
   50% {
     border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0 0 15px rgb(255, 255, 255);
   }
   100% {
     border: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   }
 }
 /* <------------> */

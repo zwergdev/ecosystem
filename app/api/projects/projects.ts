@@ -1,8 +1,8 @@
 export type Project = {
 	name: string
 	image: string
-	sector: string
-	rating: string
+	sector: 'Wallet' | 'Media' | 'NFT' | 'DeFi' | 'Marketplace'
+	rating: 'Low' | 'Middle' | 'High'
 }
 export const projects: Project[] = [
 	{
@@ -106,5 +106,59 @@ export const projects: Project[] = [
 		image: '/img/wizardland.jpeg',
 		sector: 'NFT',
 		rating: 'High'
+	},
+	{
+		name: 'Mover',
+		image: '/img/mover.jpeg',
+		sector: 'DeFi',
+		rating: 'High'
+	},
+	{
+		name: 'Ditto',
+		image: '/img/ditto.jpeg',
+		sector: 'DeFi',
+		rating: 'Middle'
+	},
+	{
+		name: 'Tortuga',
+		image: '/img/tortuga.jpeg',
+		sector: 'DeFi',
+		rating: 'Low'
+	},
+	{
+		name: 'Martian',
+		image: '/img/martian.jpeg',
+		sector: 'Wallet',
+		rating: 'Low'
+	},
+	{
+		name: 'Blur',
+		image: '/img/Blur.jpeg',
+		sector: 'Marketplace',
+		rating: 'High'
+	},
+	{
+		name: 'Topaz',
+		image: '/img/topaz.jpeg',
+		sector: 'Marketplace',
+		rating: 'Middle'
+	},
+	{
+		name: 'Incrypted',
+		image: '/img/incrypted.jpeg',
+		sector: 'Media',
+		rating: 'High'
+	},
+	{
+		name: 'Zwerg',
+		image: '/img/zwerg.jpeg',
+		sector: 'Media',
+		rating: 'Low'
+	},
+	{
+		name: 'Whale',
+		image: '/img/whale.jpeg',
+		sector: 'Media',
+		rating: 'Middle'
 	}
 ]
