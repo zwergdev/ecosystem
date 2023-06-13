@@ -1,19 +1,21 @@
 'use client'
 import {Project} from './api/projects/projects'
 import {useEffect, useState} from 'react'
-import {getProjects} from '@/services/getProjects'
+import {getProjects, getProjectsByFilter} from '@/services/getProjects'
 import Projects from '@/app/components/Projects'
 import ProjectSearch from '@/app/components/ProjectSearch'
+import Filters from '@/app/components/Filters'
 
 export default function Home() {
 	const [projects, setProjects] = useState<Project[]>([])
+	const [filter, setFilter] = useState<string>('')
 	const [loading, setLoading] = useState(true)
 	const [showed, setShowed] = useState(false)
 	const [fetchingNew, setFetchingNew] = useState(false)
 
 	useEffect(() => {
 		if (!showed) {
-			getProjects('6')
+			getProjects('99')
 				.then(setProjects)
 				.finally(() => setLoading(false))
 		} else {
@@ -23,6 +25,12 @@ export default function Home() {
 		}
 	}, [showed])
 
+	useEffect(() => {
+		if (filter !== '') {
+			getProjectsByFilter(filter).then(setProjects)
+		}
+	}, [filter])
+
 	const changeShowed = () => {
 		setShowed(!showed)
 		if (showed) {
@@ -30,6 +38,18 @@ export default function Home() {
 		} else {
 			setFetchingNew(true)
 		}
+	}
+
+	const changeFilter = (value: string) => {
+		if (value === filter) {
+			setFilter('')
+			getProjects('12')
+				.then(setProjects)
+				.finally(() => setLoading(false))
+		} else {
+			setFilter(value)
+		}
+		setShowed(false)
 	}
 
 	return (
@@ -46,13 +66,25 @@ export default function Home() {
 				<h2>Zwerg Ecosystem</h2>
 			</section>
 			<section className='container projects'>
-				{loading ? <h1>Loading...</h1> : <Projects projects={projects} />}
-				<button
-					className={fetchingNew ? 'button blinking' : 'button'}
-					onClick={changeShowed}
-					disabled={fetchingNew && true}>
-					{fetchingNew ? 'LOADING...' : showed ? 'HIDE' : 'SHOW MORE'}
-				</button>
+				<Filters filter={filter} changeFilter={changeFilter} />
+				{loading ? '' : <Projects projects={projects} />}
+
+				{filter === '' ? (
+					<button
+						className={fetchingNew ? 'button blinking' : 'button'}
+						onClick={changeShowed}
+						disabled={fetchingNew && true}>
+						{loading
+							? 'LOADING...'
+							: fetchingNew
+							? 'LOADING...'
+							: showed
+							? 'HIDE'
+							: 'SHOW MORE'}
+					</button>
+				) : (
+					''
+				)}
 			</section>
 		</main>
 	)

@@ -15,3 +15,12 @@ export const getProjectsBySearch = async (name: string) => {
 
 	return response.json()
 }
+
+export const getProjectsByFilter = async (value: string) => {
+	const response = await fetch(`http://localhost:3000/api/projects?v=${value}`)
+	if (!response.ok) {
+		throw new Error('Unable to fetch current filter.')
+	}
+
+	return response.json()
+}

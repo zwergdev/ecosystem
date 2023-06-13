@@ -6,40 +6,105 @@ export type Project = {
 }
 export const projects: Project[] = [
 	{
-		name: 'ZFT Marketplace',
+		name: 'SuiGlobal',
 		image: '/img/suiglobal.jpeg',
-		sector: 'NFT Marketplace',
+		sector: 'Media',
 		rating: 'High'
 	},
 	{
-		name: 'Zwergy',
-		image: '/img/aftermathfinance.jpeg',
+		name: 'Aptomingos',
+		image: '/img/aptomingos.jpeg',
+		sector: 'NFT',
+		rating: 'High'
+	},
+	{
+		name: 'Coin98',
+		image: '/img/coin98.jpeg',
+		sector: 'Wallet',
+		rating: 'Middle'
+	},
+	{
+		name: 'Sui Ecosystem',
+		image: '/img/suiecosystem.jpeg',
+		sector: 'Media',
+		rating: 'High'
+	},
+	{
+		name: 'Aptonauts',
+		image: '/img/aptonauts.png',
 		sector: 'NFT',
 		rating: 'Low'
 	},
-	{name: 'Zwertem', image: '/img/araya.jpeg', sector: 'DeFi', rating: 'Middle'},
-	{name: 'ZwerPad', image: '/img/logo.png', sector: 'Launchpad', rating: 'Hot'},
-	{name: 'Zweme', image: '/img/logo.png', sector: 'Meme', rating: 'Low'},
-	{name: 'Zwombies', image: '/img/logo.png', sector: 'NFT', rating: 'Low'},
-	{name: 'Zworiet', image: '/img/logo.png', sector: 'Wallet', rating: 'Hot'},
-	{name: 'Zallet', image: '/img/logo.png', sector: 'Wallet', rating: 'Middle'},
 	{
-		name: 'Zwerg Global',
-		image: '/img/logo.png',
-		sector: 'Media',
-		rating: 'Hot'
+		name: 'Araya Finance',
+		image: '/img/araya.jpeg',
+		sector: 'DeFi',
+		rating: 'Low'
 	},
 	{
-		name: 'Funnyzwergie',
-		image: '/img/logo.png',
+		name: 'BlueMove',
+		image: '/img/bluemove.png',
+		sector: 'Marketplace',
+		rating: 'High'
+	},
+	{
+		name: 'Capybaras',
+		image: '/img/capybaras.jpeg',
+		sector: 'NFT',
+		rating: 'High'
+	},
+	{
+		name: 'Clutchy',
+		image: '/img/clutchy.jpeg',
+		sector: 'Marketplace',
+		rating: 'High'
+	},
+	{
+		name: 'Ethos',
+		image: '/img/ethos.png',
+		sector: 'Wallet',
+		rating: 'Middle'
+	},
+	{
+		name: 'Fewcha Wallet',
+		image: '/img/fewchawallet.jpeg',
+		sector: 'Wallet',
+		rating: 'Middle'
+	},
+	{
+		name: 'funnyybuns',
+		image: '/img/funnyybuns.jpeg',
+		sector: 'NFT',
+		rating: 'High'
+	},
+	{
+		name: 'Pontem Network',
+		image: '/img/pontem.jpeg',
+		sector: 'DeFi',
+		rating: 'High'
+	},
+	{
+		name: 'Souffl3',
+		image: '/img/souffl3.png',
+		sector: 'Marketplace',
+		rating: 'High'
+	},
+	{
+		name: 'Suiet',
+		image: '/img/suiet.png',
+		sector: 'Wallet',
+		rating: 'High'
+	},
+	{
+		name: 'Suipunks',
+		image: '/img/suipunks.jpeg',
 		sector: 'NFT',
 		rating: 'Middle'
 	},
-	{name: 'Wergio', image: '/img/logo.png', sector: 'DeFi', rating: 'Hot'},
 	{
-		name: 'Gnome School',
-		image: '/img/logo.png',
-		sector: 'Educative',
-		rating: 'Low'
+		name: 'Wizard Land',
+		image: '/img/wizardland.jpeg',
+		sector: 'NFT',
+		rating: 'High'
 	}
 ]
