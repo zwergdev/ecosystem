@@ -68,12 +68,12 @@ export default function Home() {
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
 					deleniti!
 				</p>
-				<ProjectSearch
-					setActiveInput={setActiveInput}
-					onSearch={setProjects}
-					setFilter={setFilter}
-				/>
 			</section>
+			<ProjectSearch
+				setActiveInput={setActiveInput}
+				onSearch={setProjects}
+				setFilter={setFilter}
+			/>
 			<section className='container projects'>
 				<Filters filter={filter} changeFilter={changeFilter} />
 				{loading ? '' : <Projects projects={projects} />}

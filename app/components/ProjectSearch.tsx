@@ -39,14 +39,15 @@ const ProjectSearch = ({onSearch, setActiveInput, setFilter}: Props) => {
 	}
 
 	return (
-		<>
+		<div className='searchbarBox'>
 			<input
+				className='searchbar'
 				type='text'
 				placeholder='Search Zwerg Project'
 				value={search}
 				onChange={e => handleSearch(e)}
 			/>
-		</>
+		</div>
 	)
 }
 

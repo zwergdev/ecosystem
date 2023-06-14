@@ -1,4 +1,7 @@
+import '../../style/project.scss'
 import {Metadata} from 'next'
+import Image from 'next/image'
+import Socials from '@/app/components/Socials'
 
 type Props = {
 	params: {name: string}
@@ -21,10 +24,23 @@ export default async function Project({params: {name}}: Props) {
 	const projects = await getData(name)
 	const project = projects[0]
 	return (
-		<>
-			<h1>
-				{project.name} COOL {project.rating}
-			</h1>
-		</>
+		<div className='projectPage container'>
+			<Image
+				className='projectLogo'
+				src={project.image}
+				width={200}
+				height={200}
+				alt={`${project.name} logo`}
+			/>
+			<div className='projectInfo'>
+				<h1>{project.name}</h1>
+				<p>{project.sector}</p>
+				<p>Rating: {project.rating}</p>
+			</div>
+			<div>
+				<p>{project.desc}</p>
+				<Socials project={project} />
+			</div>
+		</div>
 	)
 }

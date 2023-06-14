@@ -1,0 +1,25 @@
+@import "general";
+
+.projectPage{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 50px 0;
+  .projectLogo{
+    border-radius: 50%;
+  }
+  .projectInfo{
+    h1{
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+    p{
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  }
+  .socials{
+    display: flex;
+    gap: 30px;
+  }
+}

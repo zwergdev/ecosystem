@@ -86,11 +86,6 @@ main {
   text-align: center;
 }
 
-.mainBanner {
-  padding-bottom: 30px;
-  margin-bottom: 15px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
-}
 .mainBanner h1 {
   font-size: 120px;
   font-weight: 900;
@@ -112,7 +107,19 @@ main {
   max-width: 50%;
   font-weight: 500;
 }
-.mainBanner input {
+
+/* <------------> */
+/* // MAIN */
+/* <------------> */
+/* <------------> */
+/* PROJECTS */
+/* <------------> */
+.searchbarBox {
+  padding-bottom: 30px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+}
+.searchbarBox .searchbar {
   width: 320px;
   padding: 10px;
   font-size: 20px;
@@ -125,21 +132,15 @@ main {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
   transition: all 0.35s linear;
 }
-.mainBanner input:focus, .mainBanner input:hover {
+.searchbarBox .searchbar:focus, .searchbarBox .searchbar:hover {
   box-shadow: 0 0 20px rgb(255, 255, 255);
   outline: none;
 }
-.mainBanner input::placeholder {
+.searchbarBox .searchbar::placeholder {
   font-size: 14px;
   font-weight: 400;
 }
 
-/* <------------> */
-/* // MAIN */
-/* <------------> */
-/* <------------> */
-/* PROJECTS */
-/* <------------> */
 .projects {
   padding: 15px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.45);
