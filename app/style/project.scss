@@ -1,25 +1,43 @@
 @import "general";
 
 .projectPage{
-  display: flex;
-  align-items: center;
-  gap: 30px;
   padding: 50px 0;
-  .projectLogo{
-    border-radius: 50%;
-  }
-  .projectInfo{
-    h1{
-      font-size: 50px;
-      margin-bottom: 15px;
-    }
-    p{
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
-  }
-  .socials{
+  min-height: calc(100vh - 185px);
+  .projectBox{
     display: flex;
+    align-items: center;
     gap: 30px;
+    margin-bottom: 30px;
+    .projectLogo{
+      border-radius: 50%;
+    }
+    .projectInfo{
+      padding-right: 30px;
+      border-right: 1px solid rgba(255, 255, 255, 0.45);
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 15px;
+      h1{
+        font-size: 50px;
+      }
+      p{
+        font-size: 20px;
+      }
+      .socials{
+        display: flex;
+        gap: 30px;
+      }
+    }
+    .projectDesc{
+      text-align: left;
+      font-size: 20px;
+      line-height: 130%;
+    }
+  }
+  .button.back{
+    max-width: max-content;
+    margin: auto;
+    text-align: center;
   }
 }

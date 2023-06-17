@@ -1,7 +1,7 @@
+@import "destyle.css";
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
   color: #F3F1E5;
   line-height: 120%;
 }
@@ -16,8 +16,33 @@ body {
   min-height: 100vh;
 }
 
+input, textarea, option, select, .selectSectorBtn {
+  font-family: "__JetBrains_Mono_71fa92", "__JetBrains_Mono_Fallback_71fa92";
+  width: 320px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  color: #202020;
+  text-align: left;
+  font-weight: 600;
+  background-color: #F3F1E5;
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  transition: all 0.35s linear;
+}
+input:focus, input:hover, textarea:focus, textarea:hover, option:focus, option:hover, select:focus, select:hover, .selectSectorBtn:focus, .selectSectorBtn:hover {
+  box-shadow: 0 0 20px rgb(255, 255, 255);
+  outline: none;
+}
+input::placeholder, textarea::placeholder, option::placeholder, select::placeholder, .selectSectorBtn::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  font-weight: 400;
+}
+
 .container {
-  width: min(100% - 15px, 1400px);
+  width: min(100% - 15px, 100vw);
   margin-inline: auto;
 }
 
@@ -56,25 +81,45 @@ body {
 }
 
 .projectPage {
+  padding: 50px 0;
+  min-height: calc(100vh - 185px);
+}
+.projectPage .projectBox {
   display: flex;
   align-items: center;
   gap: 30px;
-  padding: 50px 0;
+  margin-bottom: 30px;
 }
-.projectPage .projectLogo {
+.projectPage .projectBox .projectLogo {
   border-radius: 50%;
 }
-.projectPage .projectInfo h1 {
+.projectPage .projectBox .projectInfo {
+  padding-right: 30px;
+  border-right: 1px solid rgba(255, 255, 255, 0.45);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 15px;
+}
+.projectPage .projectBox .projectInfo h1 {
   font-size: 50px;
-  margin-bottom: 15px;
 }
-.projectPage .projectInfo p {
+.projectPage .projectBox .projectInfo p {
   font-size: 20px;
-  margin-bottom: 15px;
 }
-.projectPage .socials {
+.projectPage .projectBox .projectInfo .socials {
   display: flex;
   gap: 30px;
+}
+.projectPage .projectBox .projectDesc {
+  text-align: left;
+  font-size: 20px;
+  line-height: 130%;
+}
+.projectPage .button.back {
+  max-width: max-content;
+  margin: auto;
+  text-align: center;
 }
 
 /*# sourceMappingURL=project.css.map */

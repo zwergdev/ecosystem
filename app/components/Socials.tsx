@@ -31,8 +31,8 @@ const Socials: FC<ProjectSocialsProps> = ({project}) => {
 					<Link key={key} href={value} target='_blank'>
 						<Image
 							src={socialLinksImages[key]}
-							width={35}
-							height={35}
+							width={30}
+							height={30}
 							alt={''}
 						/>
 					</Link>

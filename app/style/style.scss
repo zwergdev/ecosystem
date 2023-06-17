@@ -62,35 +62,14 @@ main{
 /* <------------> */
 /* PROJECTS */
 /* <------------> */
-.searchbarBox{
-  padding-bottom: 30px;
-  margin-bottom: 15px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
-  .searchbar{
-    width: 320px;
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 10px;
-    border: 1px solid #000000;
-    color: #202020;
-    font-weight: 600;
-    background-color: $white;
-    outline: none;
-    box-shadow: 0 0 15px rgba(255, 255, 255, .5);
-    transition: all .35s linear;
-    &:focus, &:hover{
-      box-shadow: 0 0 20px rgba(255, 255, 255, 1);
-      outline: none;
-    }
-    &::placeholder{
-      font-size: 14px;
-      font-weight: 400;
-    }
-  }
-}
 .projects{
-  padding: 15px 0;
+  padding-bottom: 15px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  .searchbarBox{
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  }
   .filters{
     justify-content: space-between;
     display: flex;

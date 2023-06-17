@@ -1,0 +1,171 @@
+@import "destyle.css";
+* {
+  padding: 0;
+  margin: 0;
+  color: #F3F1E5;
+  line-height: 120%;
+}
+
+a {
+  text-decoration: none;
+  display: flex;
+}
+
+body {
+  background-color: black;
+  min-height: 100vh;
+}
+
+input, textarea, option, select, .selectSectorBtn {
+  font-family: "__JetBrains_Mono_71fa92", "__JetBrains_Mono_Fallback_71fa92";
+  width: 320px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  color: #202020;
+  text-align: left;
+  font-weight: 600;
+  background-color: #F3F1E5;
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  transition: all 0.35s linear;
+}
+input:focus, input:hover, textarea:focus, textarea:hover, option:focus, option:hover, select:focus, select:hover, .selectSectorBtn:focus, .selectSectorBtn:hover {
+  box-shadow: 0 0 20px rgb(255, 255, 255);
+  outline: none;
+}
+input::placeholder, textarea::placeholder, option::placeholder, select::placeholder, .selectSectorBtn::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.container {
+  width: min(100% - 15px, 100vw);
+  margin-inline: auto;
+}
+
+.button {
+  padding: 10px 20px;
+  font-weight: 600;
+  background-color: rgba(236, 227, 227, 0.1);
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: all 0.35s linear;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: rgba(236, 227, 227, 0.2);
+  border: 1px solid rgb(255, 255, 255);
+  color: #fff;
+}
+
+.bgWrap {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bgWrap img {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  opacity: 0.2;
+  filter: blur(5px);
+}
+
+.submitBox {
+  padding: 50px 0;
+}
+.submitBox .inputBox, .submitBox .selectSectorBtn, .submitBox .textAreaBox {
+  margin: auto auto 30px auto;
+  text-align: left;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+}
+.submitBox .inputBox:focus-within label, .submitBox .textAreaBox:focus-within label {
+  top: -22px;
+  color: #F3F1E5;
+}
+.submitBox .inputBox input, .submitBox .inputBox textarea, .submitBox .textAreaBox input, .submitBox .textAreaBox textarea {
+  resize: none;
+  width: 100%;
+}
+.submitBox .inputBox textarea, .submitBox .textAreaBox textarea {
+  transition: all 0.5s ease-in-out;
+  height: 110px;
+  line-height: 110%;
+}
+.submitBox .inputBox textarea.resized100, .submitBox .textAreaBox textarea.resized100 {
+  height: 200px;
+}
+.submitBox .inputBox textarea.resized200, .submitBox .textAreaBox textarea.resized200 {
+  height: 300px;
+}
+.submitBox .inputBox textarea.resized300, .submitBox .textAreaBox textarea.resized300 {
+  height: 400px;
+}
+.submitBox .inputBox textarea.resized400, .submitBox .textAreaBox textarea.resized400 {
+  height: 500px;
+}
+.submitBox .selectSectorBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 23px 10px;
+  transition: all 0.5s ease-in-out;
+}
+.submitBox .selectSectorBtn.valueIsSelected {
+  padding: 15px 10px;
+}
+.submitBox .selectSectorBtn.valueIsSelected:has(button) .selectSectorBtnValue:first-of-type {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+.submitBox .selectSectorBtn:has(button) {
+  padding: 10px;
+}
+.submitBox .selectSectorBtn .selectSectorBtnValue {
+  font-size: 14px;
+  font-weight: 400;
+  width: 100%;
+  padding-bottom: 5px;
+  color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.submitBox .selectSectorBtn .selectSectorBtnValue:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.submitBox .selectSectorBtn .selectSectorBtnValue.selected {
+  display: none;
+}
+.submitBox .selectSectorBtn .selectSectorBtnValue:hover {
+  color: #202020;
+}
+.submitBox label {
+  cursor: text;
+  position: absolute;
+  width: 100%;
+  top: 16px;
+  left: 11px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  font-weight: 400;
+  transition: all 0.5s ease-in-out;
+}
+.submitBox label.typed, .submitBox label.toTop {
+  top: -22px;
+  color: #F3F1E5;
+}
+
+/*# sourceMappingURL=submit.css.map */

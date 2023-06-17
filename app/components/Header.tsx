@@ -10,7 +10,7 @@ export default function Header() {
 					<Link href='/'>
 						<Image src={logo} alt='logo' />
 					</Link>
-					<Link href='#' className='button'>
+					<Link href='/submit' className='button'>
 						Submit Project
 					</Link>
 				</nav>

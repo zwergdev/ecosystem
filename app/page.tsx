@@ -69,12 +69,12 @@ export default function Home() {
 					deleniti!
 				</p>
 			</section>
-			<ProjectSearch
-				setActiveInput={setActiveInput}
-				onSearch={setProjects}
-				setFilter={setFilter}
-			/>
 			<section className='container projects'>
+				<ProjectSearch
+					setActiveInput={setActiveInput}
+					onSearch={setProjects}
+					setFilter={setFilter}
+				/>
 				<Filters filter={filter} changeFilter={changeFilter} />
 				{loading ? '' : <Projects projects={projects} />}
 

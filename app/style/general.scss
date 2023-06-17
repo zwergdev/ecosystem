@@ -1,9 +1,11 @@
+@import "destyle.css";
 $white: #F3F1E5;
+$dark: #202020;
+$placeholderColor: rgba(0, 0, 0, .5);
 
 *{
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
   color: $white;
   line-height: 120%;
 }
@@ -15,8 +17,32 @@ body{
   background-color: black;
   min-height: 100vh;
 }
+input, textarea, option, select, .selectSectorBtn{
+  font-family: '__JetBrains_Mono_71fa92', '__JetBrains_Mono_Fallback_71fa92';
+  width: 320px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  color: $dark;
+  text-align: left;
+  font-weight: 600;
+  background-color: $white;
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 255, 255, .5);
+  transition: all .35s linear;
+  &:focus, &:hover{
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    outline: none;
+  }
+  &::placeholder{
+    color: rgba(0, 0, 0, .5);
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
 .container{
-  width: min(100% - 15px, 1400px);
+  width: min(100% - 15px, 100vw);
   margin-inline: auto;
 }
 .button{

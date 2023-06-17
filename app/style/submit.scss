@@ -1,0 +1,93 @@
+@import "general";
+
+.submitBox{
+  padding: 50px 0;
+  .inputBox, .selectSectorBtn, .textAreaBox{
+    margin: auto auto 30px auto;
+    text-align: left;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+  }
+  .inputBox, .textAreaBox{
+    &:focus-within{
+      label{
+        top: -22px;
+        color: $white;
+      }
+    }
+    input, textarea{
+      resize: none;
+      width: 100%;
+    }
+    textarea{
+      transition: all .5s ease-in-out;
+      height: 110px;
+      line-height: 110%;
+      &.resized100{
+        height: 200px;
+      }
+      &.resized200{
+        height: 300px;
+      }
+      &.resized300{
+        height: 400px;
+      }
+      &.resized400{
+        height: 500px;
+      }
+    }
+  }
+  .selectSectorBtn{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 23px 10px;
+    transition: all .5s ease-in-out;
+    &.valueIsSelected{
+      padding: 15px 10px;
+      &:has(button) .selectSectorBtnValue:first-of-type{
+        margin-top: 5px;
+        padding-top: 5px;
+        border-top: 1px solid rgba(0, 0, 0, .2);
+      }
+    }
+    &:has(button){
+      padding: 10px;
+    }
+    .selectSectorBtnValue{
+      font-size: 14px;
+      font-weight: 400;
+      width: 100%;
+      padding-bottom: 5px;
+      color: $placeholderColor;
+      transition: all .3s ease-in-out;
+      border-bottom: 1px solid rgba(0, 0, 0, .2);
+      &:last-of-type{
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      &.selected{
+        display: none;
+      }
+      &:hover{
+        color: $dark;
+      }
+    }
+  }
+  label{
+    cursor: text;
+    position: absolute;
+    width: 100%;
+    top: 16px;
+    left: 11px;
+    color: $placeholderColor;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all .5s ease-in-out;
+    &.typed, &.toTop{
+      top: -22px;
+      color: $white;
+    }
+  }
+}
