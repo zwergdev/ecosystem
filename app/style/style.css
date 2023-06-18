@@ -111,13 +111,13 @@ main {
   text-align: center;
 }
 
-.mainBanner h1 {
+.mainBanner h1, .successPage h1 {
   font-size: 120px;
   font-weight: 900;
   margin-bottom: 30px;
   line-height: 100%;
 }
-.mainBanner h1 span {
+.mainBanner h1 span, .successPage h1 span {
   margin-left: 40px;
   line-height: 100%;
   background: -webkit-linear-gradient(65deg, #a20e0e, #ea1919);
@@ -126,7 +126,7 @@ main {
   -webkit-text-fill-color: transparent;
   text-shadow: 1px 2px 2px rgba(206, 19, 19, 0.4);
 }
-.mainBanner p {
+.mainBanner p, .successPage p {
   font-size: 20px;
   margin: auto auto 30px auto;
   max-width: 50%;

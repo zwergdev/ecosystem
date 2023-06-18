@@ -1,30 +1,25 @@
-import {useState} from 'react'
-const selectSectorBtnValues = ['Wallet', 'Media', 'NFT', 'DeFi', 'Marketplace']
+import React, {useState} from 'react'
+import {formValues} from '@/app/submit/page'
 
-export default function SelectSectorBtns({
-	sectorValue,
-	handleSectorChange
-}: any) {
+const selectSectorBtnValues = ['Wallet', 'Media', 'NFT', 'DeFi', 'Marketplace']
+interface SelectSectorBtns {
+	sectorValue: formValues['sector']
+	handleSectorChange: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+}
+
+const SelectSectorBtns: React.FC<SelectSectorBtns> = ({sectorValue, handleSectorChange}) => {
 	const [sectorsShowed, setSectorsShowed] = useState(false)
 
 	return (
 		<button
-			className={
-				sectorValue ? 'selectSectorBtn valueIsSelected' : 'selectSectorBtn'
-			}
+			className={sectorValue ? 'selectSectorBtn valueIsSelected' : 'selectSectorBtn'}
 			onClick={() => setSectorsShowed(!sectorsShowed)}>
-			<label className={sectorsShowed || sectorValue ? 'toTop' : ''}>
-				Project's category
-			</label>
+			<label className={sectorsShowed || sectorValue ? 'toTop' : ''}>Project's category</label>
 			{sectorValue}
 			{sectorsShowed &&
 				selectSectorBtnValues.map(btnValue => (
 					<button
-						className={
-							sectorValue === btnValue
-								? 'selectSectorBtnValue selected'
-								: 'selectSectorBtnValue'
-						}
+						className={sectorValue === btnValue ? 'selectSectorBtnValue selected' : 'selectSectorBtnValue'}
 						key={btnValue}
 						value={btnValue}
 						onClick={e => handleSectorChange(e)}>
@@ -34,3 +29,4 @@ export default function SelectSectorBtns({
 		</button>
 	)
 }
+export default SelectSectorBtns
