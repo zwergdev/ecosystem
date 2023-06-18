@@ -17,8 +17,7 @@ body{
   background-color: black;
   min-height: 100vh;
 }
-input, textarea, option, select, .selectSectorBtn{
-  font-family: '__JetBrains_Mono_71fa92', '__JetBrains_Mono_Fallback_71fa92';
+input, textarea, .selectSectorBtn{
   width: 320px;
   padding: 10px;
   font-size: 20px;
@@ -35,10 +34,21 @@ input, textarea, option, select, .selectSectorBtn{
     box-shadow: 0 0 20px rgba(255, 255, 255, 1);
     outline: none;
   }
-  &::placeholder{
-    color: rgba(0, 0, 0, .5);
-    font-size: 14px;
-    font-weight: 400;
+}
+label{
+  cursor: text;
+  position: absolute;
+  width: 100%;
+  top: 16px;
+  left: 11px;
+  display: flex;
+  color: $placeholderColor;
+  font-size: 14px;
+  font-weight: 400;
+  transition: all .5s ease-in-out;
+  &.typed, &.toTop{
+    top: -22px;
+    color: $white;
   }
 }
 .container{

@@ -40,10 +40,13 @@ const ProjectSearch = ({onSearch, setActiveInput, setFilter}: Props) => {
 
 	return (
 		<div className='searchbarBox'>
+			<label htmlFor='search'>Search Zwerg Project</label>
 			<input
 				className='searchbar'
+				autoComplete='off'
+				autoCorrect='off'
+				id='search'
 				type='text'
-				placeholder='Search Zwerg Project'
 				value={search}
 				onChange={e => handleSearch(e)}
 			/>

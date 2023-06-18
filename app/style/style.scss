@@ -66,11 +66,23 @@ main{
   padding-bottom: 15px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.45);
   .searchbarBox{
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+    margin: auto auto 30px auto;
+    text-align: left;
+    width: 320px;
+    position: relative;
+    &:focus-within{
+      label{
+        top: -22px;
+        color: $white;
+      }
+    }
+    label{
+      cursor: text;
+    }
   }
   .filters{
+    border-top: 1px solid rgba(255, 255, 255, 0.45);
+    padding-top: 15px;
     justify-content: space-between;
     display: flex;
     gap: 30px;

@@ -12,20 +12,32 @@ const SelectSectorBtns: React.FC<SelectSectorBtns> = ({sectorValue, handleSector
 
 	return (
 		<button
+			style={{
+				height:
+					`${
+						sectorsShowed
+							? sectorValue
+								? (selectSectorBtnValues.length + 1) * 28
+								: selectSectorBtnValues.length * 32
+							: 48.5
+					}` + 'px'
+			}}
 			className={sectorValue ? 'selectSectorBtn valueIsSelected' : 'selectSectorBtn'}
 			onClick={() => setSectorsShowed(!sectorsShowed)}>
 			<label className={sectorsShowed || sectorValue ? 'toTop' : ''}>Project's category</label>
 			{sectorValue}
 			{sectorsShowed &&
-				selectSectorBtnValues.map(btnValue => (
-					<button
-						className={sectorValue === btnValue ? 'selectSectorBtnValue selected' : 'selectSectorBtnValue'}
-						key={btnValue}
-						value={btnValue}
-						onClick={e => handleSectorChange(e)}>
-						{btnValue}
-					</button>
-				))}
+				selectSectorBtnValues.map(btnValue =>
+					sectorValue === btnValue ? null : (
+						<button
+							className='selectSectorBtnValue'
+							key={btnValue}
+							value={btnValue}
+							onClick={e => handleSectorChange(e)}>
+							{btnValue}
+						</button>
+					)
+				)}
 		</button>
 	)
 }

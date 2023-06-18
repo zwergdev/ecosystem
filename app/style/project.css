@@ -16,8 +16,7 @@ body {
   min-height: 100vh;
 }
 
-input, textarea, option, select, .selectSectorBtn {
-  font-family: "__JetBrains_Mono_71fa92", "__JetBrains_Mono_Fallback_71fa92";
+input, textarea, .selectSectorBtn {
   width: 320px;
   padding: 10px;
   font-size: 20px;
@@ -31,14 +30,26 @@ input, textarea, option, select, .selectSectorBtn {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
   transition: all 0.35s linear;
 }
-input:focus, input:hover, textarea:focus, textarea:hover, option:focus, option:hover, select:focus, select:hover, .selectSectorBtn:focus, .selectSectorBtn:hover {
+input:focus, input:hover, textarea:focus, textarea:hover, .selectSectorBtn:focus, .selectSectorBtn:hover {
   box-shadow: 0 0 20px rgb(255, 255, 255);
   outline: none;
 }
-input::placeholder, textarea::placeholder, option::placeholder, select::placeholder, .selectSectorBtn::placeholder {
+
+label {
+  cursor: text;
+  position: absolute;
+  width: 100%;
+  top: 16px;
+  left: 11px;
+  display: flex;
   color: rgba(0, 0, 0, 0.5);
   font-size: 14px;
   font-weight: 400;
+  transition: all 0.5s ease-in-out;
+}
+label.typed, label.toTop {
+  top: -22px;
+  color: #F3F1E5;
 }
 
 .container {
