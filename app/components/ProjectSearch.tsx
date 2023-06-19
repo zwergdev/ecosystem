@@ -1,23 +1,18 @@
-'use client'
-import {useState, useCallback, useEffect, ChangeEventHandler} from 'react'
+import {ChangeEventHandler, useCallback, useContext, useEffect, useState} from 'react'
 import {getProjectsBySearch} from '@/services/getProjects'
-import {Project} from '@/app/api/projects/projects'
 import debounce from 'lodash.debounce'
+import {Status} from '@/app/page'
+import {HomeContext} from '@/services/contextAPI'
 
-type Props = {
-	onSearch: (value: Project[]) => void
-	setActiveInput: (value: boolean) => void
-	setFilter: (value: string) => void
-}
-
-const ProjectSearch = ({onSearch, setActiveInput, setFilter}: Props) => {
+const ProjectSearch = () => {
+	let {setProjects, setFilter, setStatus} = useContext(HomeContext)
 	const [search, setSearch] = useState<string>('')
 	const [ready, setReady] = useState(false)
 
 	const debouncedGetProjectsBySearch = useCallback(
 		debounce(async (value: string) => {
 			const posts = await getProjectsBySearch(value)
-			onSearch(posts)
+			setProjects(posts)
 		}, 400),
 		[]
 	)
@@ -27,14 +22,14 @@ const ProjectSearch = ({onSearch, setActiveInput, setFilter}: Props) => {
 			debouncedGetProjectsBySearch(search)
 		}
 		if (search === '') {
-			setActiveInput(false)
+			setStatus(Status.loaded)
 		}
 	}, [debouncedGetProjectsBySearch, search])
 
 	const handleSearch: ChangeEventHandler<HTMLInputElement> = e => {
 		setSearch(e.target.value)
 		setReady(true)
-		setActiveInput(true)
+		setStatus(Status.search)
 		setFilter('')
 	}
 

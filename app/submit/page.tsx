@@ -5,7 +5,7 @@ import FormInputs from '@/app/components/submit_project/FormInputs'
 import DescriptionTextArea from '@/app/components/submit_project/DescriptionTextArea'
 import {useRouter} from 'next/navigation'
 import {useEffect, useState} from 'react'
-import {sendTelegramForm} from '@/services/getProjects'
+import {sendTelegramForm} from '@/services/telegram'
 
 export type formValues = {
 	name: string

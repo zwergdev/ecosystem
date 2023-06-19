@@ -1,19 +1,19 @@
-import {MouseEvent} from 'react'
+import {MouseEvent, useContext} from 'react'
+import {Status} from '@/app/page'
+import {HomeContext} from '@/services/contextAPI'
 
-const buttons = [
-	{value: 'NFT'},
-	{value: 'DeFi'},
-	{value: 'Wallet'},
-	{value: 'Marketplace'},
-	{value: 'Media'}
-]
+const buttons = [{value: 'NFT'}, {value: 'DeFi'}, {value: 'Wallet'}, {value: 'Marketplace'}, {value: 'Media'}]
 
-type FiltersProps = {
-	filter: string
-	changeFilter: (e: string) => void
-}
-
-export default function Filters({filter, changeFilter}: FiltersProps) {
+export default function Filters() {
+	let {filter, setFilter, setStatus} = useContext(HomeContext)
+	const onChangeFilter = (e: MouseEvent<HTMLButtonElement>) => {
+		if (e.currentTarget.value === filter) {
+			setFilter('')
+		} else {
+			setFilter(e.currentTarget.value)
+		}
+		setStatus(Status.filter)
+	}
 	return (
 		<div className='filters'>
 			{buttons.map((button, idx) => (
@@ -21,9 +21,7 @@ export default function Filters({filter, changeFilter}: FiltersProps) {
 					key={idx}
 					className={filter === button.value ? 'button active' : 'button'}
 					value={button.value}
-					onClick={(e: MouseEvent<HTMLButtonElement>) =>
-						changeFilter(e.currentTarget.value)
-					}>
+					onClick={(e: MouseEvent<HTMLButtonElement>) => onChangeFilter(e)}>
 					{button.value}
 				</button>
 			))}
