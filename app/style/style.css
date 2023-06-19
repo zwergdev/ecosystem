@@ -38,7 +38,7 @@ input:focus, input:hover, textarea:focus, textarea:hover, .selectSectorBtn:focus
 label {
   cursor: text;
   position: absolute;
-  width: 100%;
+  width: max-content;
   top: 16px;
   left: 11px;
   display: flex;
@@ -140,8 +140,19 @@ main {
 .mainBanner p, .successPage p {
   font-size: 20px;
   margin: auto auto 30px auto;
-  max-width: 50%;
+  max-width: 700px;
   font-weight: 500;
+}
+@media screen and (max-width: 700px) {
+  .mainBanner h1, .successPage h1 {
+    font-size: 17vw;
+  }
+  .mainBanner h1 span, .successPage h1 span {
+    margin-left: 5%;
+  }
+  .mainBanner p, .successPage p {
+    max-width: 100%;
+  }
 }
 
 /* <------------> */
@@ -169,14 +180,28 @@ main {
 }
 .projects .filters {
   border-top: 1px solid rgba(255, 255, 255, 0.45);
-  padding-top: 15px;
+  padding: 15px 0;
   justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  overflow-x: visible;
   display: flex;
   gap: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255, 255, 255) rgba(255, 255, 255, 0.45);
+}
+.projects .filters::-webkit-scrollbar {
+  height: 1px;
+}
+.projects .filters::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+.projects .filters::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
 }
 .projects .filters .button {
-  width: 100%;
+  flex: 0 1 100%;
 }
 .projects .filters .button.active {
   animation: blinking 1.5s linear infinite;
@@ -184,7 +209,7 @@ main {
 .projects .projectsBox {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 30px;
   margin-bottom: 15px;
 }
@@ -196,7 +221,8 @@ main {
   border-radius: 15px;
   padding: 15px;
   text-align: left;
-  flex: 0 1 calc(25% - 23px);
+  flex: 1 1 320px;
+  max-width: 450px;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   cursor: pointer;
@@ -244,6 +270,18 @@ main {
 .projects .button.blinking {
   animation: blinking 1.5s linear infinite;
 }
+@media screen and (max-width: 700px) {
+  .projects .searchbarBox {
+    max-width: 320px;
+    width: 100%;
+  }
+  .projects .searchbarBox input {
+    width: 100%;
+  }
+  .projects .projectsBox .item {
+    max-width: 100%;
+  }
+}
 
 /* <------------> */
 /* //PROJECTS */
@@ -254,22 +292,26 @@ main {
 footer {
   padding: 10px 0;
 }
-footer p a {
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .container p a {
   display: inline;
   background: -webkit-linear-gradient(65deg, #a20e0e, #ef0505);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-footer .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-footer .container img {
+footer .container .gitLogo {
   width: 30px;
   height: 30px;
   opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+}
+footer .container .gitLogo:hover {
+  opacity: 1;
 }
 
 /* <------------> */

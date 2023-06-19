@@ -38,7 +38,7 @@ input, textarea, .selectSectorBtn{
 label{
   cursor: text;
   position: absolute;
-  width: 100%;
+  width: max-content;
   top: 16px;
   left: 11px;
   display: flex;
@@ -84,4 +84,9 @@ label{
   object-fit: cover;
   opacity: .2;
   filter: blur(5px);
+}
+@mixin max-screen($res) {
+  @media screen and (max-width: $res) {
+    @content;
+  }
 }

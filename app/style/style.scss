@@ -20,6 +20,7 @@ header{
     }
   }
 }
+
 /* <------------> */
 /* //HEADER */
 /* <------------> */
@@ -51,10 +52,22 @@ main{
   p{
     font-size: 20px;
     margin: auto auto 30px auto;
-    max-width: 50%;
+    max-width: 700px;
     font-weight: 500;
   }
+  @include max-screen(700px){
+    h1{
+      font-size: 17vw;
+      span{
+        margin-left: 5%;
+      }
+    }
+    p{
+      max-width: 100%;
+    }
+  }
 }
+
 /* <------------> */
 /* // MAIN */
 /* <------------> */
@@ -62,6 +75,7 @@ main{
 /* <------------> */
 /* PROJECTS */
 /* <------------> */
+
 .projects{
   padding-bottom: 15px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.45);
@@ -82,13 +96,27 @@ main{
   }
   .filters{
     border-top: 1px solid rgba(255, 255, 255, 0.45);
-    padding-top: 15px;
+    padding: 15px 0;
     justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow-y: hidden;
+    overflow-x: visible;
     display: flex;
     gap: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 1) rgba(255, 255, 255, 0.45);
+    &::-webkit-scrollbar {
+      height: 1px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: rgba(255, 255, 255, 0.45);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 1);
+    }
     .button{
-      width: 100%;
+      flex: 0 1 100%;
       &.active{
         animation: blinking 1.5s linear infinite;
       }
@@ -97,7 +125,7 @@ main{
   .projectsBox{
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 30px;
     margin-bottom: 15px;
     .item{
@@ -108,7 +136,8 @@ main{
       border-radius: 15px;
       padding: 15px;
       text-align: left;
-      flex: 0 1 calc(25% - 23px);
+      flex: 1 1 320px;
+      max-width: 450px;
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       cursor: pointer;
@@ -157,6 +186,18 @@ main{
       animation: blinking 1.5s linear infinite;
     }
   }
+  @include max-screen(700px){
+    .searchbarBox{
+      max-width: 320px;
+      width: 100%;
+      input{
+        width: 100%;
+      }
+    }
+    .projectsBox .item{
+      max-width: 100%;
+    }
+  }
 }
 
 /* <------------> */
@@ -169,21 +210,27 @@ main{
 
 footer{
   padding: 10px 0;
-  p a{
-    display: inline;
-    background: -webkit-linear-gradient(65deg , #a20e0e, #ef0505);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
   .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    img{
+    p{
+      a{
+        display: inline;
+        background: -webkit-linear-gradient(65deg , #a20e0e, #ef0505);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+    .gitLogo{
       width: 30px;
       height: 30px;
       opacity: .5;
+      transition: all .3s ease-in-out;
+      &:hover{
+        opacity: 1;
+      }
     }
   }
 }

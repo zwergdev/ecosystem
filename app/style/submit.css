@@ -38,7 +38,7 @@ input:focus, input:hover, textarea:focus, textarea:hover, .selectSectorBtn:focus
 label {
   cursor: text;
   position: absolute;
-  width: 100%;
+  width: max-content;
   top: 16px;
   left: 11px;
   display: flex;
@@ -169,6 +169,11 @@ label.typed, label.toTop {
 .submitBox .selectSectorBtn .selectSectorBtnValue:hover {
   color: #202020;
 }
+@media screen and (max-width: 700px) {
+  .submitBox .inputBox, .submitBox .selectSectorBtn, .submitBox .textAreaBox {
+    max-width: calc(100vw - 15px);
+  }
+}
 
 /* <------------> */
 /* //FORM PAGE */
@@ -189,6 +194,11 @@ label.typed, label.toTop {
 }
 .successPage .button {
   display: inline-block;
+}
+@media screen and (max-width: 400px) {
+  .successPage h1 {
+    font-size: 16vw;
+  }
 }
 
 /* <------------> */

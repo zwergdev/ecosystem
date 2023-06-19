@@ -20,26 +20,12 @@ export default function Home() {
 				.then(setProjects)
 				.finally(() => setLoading(false))
 		} else {
+			setFetchingNew(true)
 			getProjects('999')
 				.then(setProjects)
 				.finally(() => setFetchingNew(false))
 		}
 	}, [showed])
-
-	useEffect(() => {
-		if (filter !== '') {
-			getProjectsByFilter(filter).then(setProjects)
-		}
-	}, [filter])
-
-	const changeShowed = () => {
-		setShowed(!showed)
-		if (showed) {
-			setFetchingNew(false)
-		} else {
-			setFetchingNew(true)
-		}
-	}
 
 	const changeFilter = (value: string) => {
 		if (value === filter) {
@@ -48,6 +34,7 @@ export default function Home() {
 				.then(setProjects)
 				.finally(() => setLoading(false))
 		} else {
+			getProjectsByFilter(value).then(setProjects)
 			setFilter(value)
 		}
 		setShowed(false)
@@ -64,32 +51,20 @@ export default function Home() {
 					<br />
 					EC0SYSTEM
 				</h1>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-					deleniti!
-				</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, deleniti!</p>
 			</section>
 			<section className='container projects'>
-				<ProjectSearch
-					setActiveInput={setActiveInput}
-					onSearch={setProjects}
-					setFilter={setFilter}
-				/>
+				<ProjectSearch setActiveInput={setActiveInput} onSearch={setProjects} setFilter={setFilter} />
 				<Filters filter={filter} changeFilter={changeFilter} />
-				{loading ? '' : <Projects projects={projects} />}
+
+				{!loading && <Projects projects={projects} />}
 
 				{filter === '' && !activeInput ? (
 					<button
-						className={fetchingNew ? 'button blinking' : 'button'}
-						onClick={changeShowed}
+						className={fetchingNew || loading ? 'button blinking' : 'button'}
+						onClick={() => setShowed(!showed)}
 						disabled={fetchingNew && true}>
-						{loading
-							? 'LOADING...'
-							: fetchingNew
-							? 'LOADING...'
-							: showed
-							? 'HIDE'
-							: 'SHOW MORE'}
+						{loading || fetchingNew ? 'LOADING...' : showed ? 'HIDE' : 'SHOW MORE'}
 					</button>
 				) : (
 					''

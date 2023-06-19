@@ -28,18 +28,7 @@ export const getProjectsByFilter = async (value: string) => {
 }
 
 export const sendTelegramForm = async (formValues: formValues) => {
-	const {name, twitter, discord, medium, gitbook, site, zealy, sector, desc} = formValues
-	const text = `Name: ${name}%0A
-	Twitter: ${twitter}%0A
-	Discord: ${discord}%0A
-	Medium: ${medium}%0A
-	Gitbook: ${gitbook}%0A
-	Site: ${site}%0A
-	Zealy: ${zealy}%0A
-	Sector: ${sector}%0A
-	Description: ${desc}`
-
-	const response = await fetch(`http://localhost:3000/api/form?text=${text}`)
+	const response = await fetch(`http://localhost:3000/api/form`, {method: 'POST', body: JSON.stringify(formValues)})
 	if (!response.ok) {
 		throw new Error('Unable to send form.')
 	}

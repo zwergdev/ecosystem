@@ -82,6 +82,11 @@
       }
     }
   }
+  @include max-screen(700px){
+    .inputBox, .selectSectorBtn, .textAreaBox{
+      max-width: calc(100vw - 15px);
+    }
+  }
 }
 
 /* <------------> */
@@ -104,6 +109,11 @@
   }
   .button{
     display: inline-block;
+  }
+  @include max-screen(400px){
+    h1{
+      font-size: 16vw;
+    }
   }
 }
 

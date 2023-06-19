@@ -7,14 +7,14 @@ export default function Footer() {
 		<footer>
 			<div className='container'>
 				<p>
-					Designed and developed by{' '}
+					Developed by{' '}
 					<Link href='https://twitter.com/zwergdev' target='_blank'>
 						zwerg
 					</Link>
 					.
 				</p>
 				<Link href='#'>
-					<Image src={github} width={30} height={30} alt='github logo' />
+					<Image src={github} width={30} height={30} className='gitLogo' alt='github logo' />
 				</Link>
 			</div>
 		</footer>

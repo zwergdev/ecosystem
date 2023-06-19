@@ -7,7 +7,8 @@
     display: flex;
     align-items: center;
     gap: 30px;
-    margin-bottom: 30px;
+    max-width: 1400px;
+    margin: auto auto 30px;
     .projectLogo{
       border-radius: 50%;
     }
@@ -19,6 +20,7 @@
       flex-direction: column;
       gap: 15px;
       h1{
+        text-align: left;
         font-size: 50px;
       }
       p{
@@ -39,5 +41,29 @@
     max-width: max-content;
     margin: auto;
     text-align: center;
+  }
+  @include max-screen(1100px){
+    .projectBox{
+      flex-wrap: wrap;
+      .projectInfo{
+        border-right: none;
+        padding-right: 0;
+      }
+      .projectDesc{
+        border-top: 1px solid rgba(255, 255, 255, 0.45);
+        padding-top: 30px;
+      }
+    }
+  }
+  @include max-screen(700px){
+    .projectBox{
+      justify-content: center;
+      .projectInfo{
+        align-items: center;
+        h1{
+          text-align: center;
+        }
+      }
+    }
   }
 }
