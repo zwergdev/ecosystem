@@ -1,9 +1,8 @@
 import './style/style.scss'
 import {JetBrains_Mono} from 'next/font/google'
-import Footer from './components/Footer'
-import bg from './img/bg.jpg'
+import Footer from './components/general/Footer'
 import Image from 'next/image'
-import Header from './components/Header'
+import Header from './components/general/Header'
 import {ReactNode} from 'react'
 
 const jetBrains = JetBrains_Mono({subsets: ['latin']})
@@ -18,7 +17,7 @@ export default function RootLayout({children}: {children: ReactNode}) {
 		<html lang='en'>
 			<body className={jetBrains.className}>
 				<div className='bgWrap'>
-					<Image src={bg} alt='background' />
+					<Image src='/img/bg.jpg' width={1280} height={720} alt='background' />
 				</div>
 				<Header />
 				{children}

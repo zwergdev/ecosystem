@@ -3,7 +3,7 @@ export type Project = {
 	image: string
 	sector: 'Wallet' | 'Media' | 'NFT' | 'DeFi' | 'Marketplace'
 	rating: 'Low' | 'Middle' | 'High'
-	socials?: {
+	socials: {
 		twitter: `https://${string}`
 		discord?: `https://${string}`
 		medium?: `https://${string}`
@@ -16,7 +16,7 @@ export type Project = {
 export const projects: Project[] = [
 	{
 		name: 'SuiGlobal',
-		image: '/img/suiglobal.jpeg',
+		image: '/img/projects/suiglobal.jpg',
 		sector: 'Media',
 		rating: 'High',
 		socials: {
@@ -31,7 +31,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Aptomingos',
-		image: '/img/aptomingos.jpeg',
+		image: '/img/projects/aptomingos.jpg',
 		sector: 'NFT',
 		rating: 'High',
 		socials: {
@@ -44,7 +44,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Coin98',
-		image: '/img/coin98.jpeg',
+		image: '/img/projects/coin98.jpg',
 		sector: 'Wallet',
 		rating: 'Middle',
 		socials: {
@@ -57,7 +57,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Sui Ecosystem',
-		image: '/img/suiecosystem.jpeg',
+		image: '/img/projects/suiecosystem.jpg',
 		sector: 'Media',
 		rating: 'High',
 		socials: {
@@ -70,7 +70,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Aptonauts',
-		image: '/img/aptonauts.png',
+		image: '/img/projects/aptonauts.jpg',
 		sector: 'NFT',
 		rating: 'Low',
 		socials: {
@@ -81,7 +81,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Araya Finance',
-		image: '/img/araya.jpeg',
+		image: '/img/projects/araya.jpg',
 		sector: 'DeFi',
 		rating: 'Low',
 		socials: {
@@ -92,7 +92,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'BlueMove',
-		image: '/img/bluemove.png',
+		image: '/img/projects/bluemove.jpg',
 		sector: 'Marketplace',
 		rating: 'High',
 		socials: {
@@ -105,7 +105,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Capybaras',
-		image: '/img/capybaras.jpeg',
+		image: '/img/projects/capybaras.jpg',
 		sector: 'NFT',
 		rating: 'High',
 		socials: {
@@ -118,7 +118,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Clutchy',
-		image: '/img/clutchy.jpeg',
+		image: '/img/projects/clutchy.jpg',
 		sector: 'Marketplace',
 		rating: 'High',
 		socials: {
@@ -130,7 +130,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Ethos',
-		image: '/img/ethos.png',
+		image: '/img/projects/ethos.jpg',
 		sector: 'Wallet',
 		rating: 'Middle',
 		socials: {
@@ -143,7 +143,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Fewcha Wallet',
-		image: '/img/fewchawallet.jpeg',
+		image: '/img/projects/fewchawallet.jpg',
 		sector: 'Wallet',
 		rating: 'Middle',
 		socials: {
@@ -157,7 +157,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'funnyybuns',
-		image: '/img/funnyybuns.jpeg',
+		image: '/img/projects/funnyybuns.jpg',
 		sector: 'NFT',
 		rating: 'High',
 		socials: {
@@ -170,7 +170,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Pontem Network',
-		image: '/img/pontem.jpeg',
+		image: '/img/projects/pontem.jpg',
 		sector: 'DeFi',
 		rating: 'High',
 		socials: {
@@ -184,7 +184,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Souffl3',
-		image: '/img/souffl3.png',
+		image: '/img/projects/souffl3.jpg',
 		sector: 'Marketplace',
 		rating: 'High',
 		socials: {
@@ -197,7 +197,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Suiet',
-		image: '/img/suiet.png',
+		image: '/img/projects/suiet.jpg',
 		sector: 'Wallet',
 		rating: 'High',
 		socials: {
@@ -211,7 +211,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Suipunks',
-		image: '/img/suipunks.jpeg',
+		image: '/img/projects/suipunks.jpg',
 		sector: 'NFT',
 		rating: 'Middle',
 		socials: {
@@ -224,7 +224,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Wizard Land',
-		image: '/img/wizardland.jpeg',
+		image: '/img/projects/wizardland.jpg',
 		sector: 'NFT',
 		rating: 'High',
 		socials: {
@@ -238,7 +238,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Mover',
-		image: '/img/mover.jpeg',
+		image: '/img/projects/mover.jpg',
 		sector: 'DeFi',
 		rating: 'High',
 		socials: {
@@ -251,7 +251,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Ditto',
-		image: '/img/ditto.jpeg',
+		image: '/img/projects/ditto.jpg',
 		sector: 'DeFi',
 		rating: 'Middle',
 		socials: {
@@ -265,7 +265,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Tortuga',
-		image: '/img/tortuga.jpeg',
+		image: '/img/projects/tortuga.jpg',
 		sector: 'DeFi',
 		rating: 'Low',
 		socials: {
@@ -278,7 +278,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Martian',
-		image: '/img/martian.jpeg',
+		image: '/img/projects/martian.jpg',
 		sector: 'Wallet',
 		rating: 'Low',
 		socials: {
@@ -292,7 +292,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Blur',
-		image: '/img/Blur.jpeg',
+		image: '/img/projects/Blur.jpg',
 		sector: 'Marketplace',
 		rating: 'High',
 		socials: {
@@ -304,7 +304,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Topaz',
-		image: '/img/topaz.jpeg',
+		image: '/img/projects/topaz.jpg',
 		sector: 'Marketplace',
 		rating: 'Middle',
 		socials: {
@@ -316,7 +316,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Incrypted',
-		image: '/img/incrypted.jpeg',
+		image: '/img/projects/incrypted.jpg',
 		sector: 'Media',
 		rating: 'High',
 		socials: {
@@ -328,7 +328,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Zwerg',
-		image: '/img/zwerg.jpeg',
+		image: '/img/projects/zwerg.jpg',
 		sector: 'Media',
 		rating: 'Low',
 		socials: {
@@ -339,7 +339,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Whale',
-		image: '/img/whale.jpeg',
+		image: '/img/projects/whale.jpg',
 		sector: 'Media',
 		rating: 'Middle',
 		socials: {

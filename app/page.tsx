@@ -2,10 +2,10 @@
 import {Project} from './api/projects/projects'
 import {useEffect, useState} from 'react'
 import {getProjects, getProjectsByFilter} from '@/services/getProjects'
-import Projects from '@/app/components/Projects'
-import ProjectSearch from '@/app/components/ProjectSearch'
-import Filters from '@/app/components/Filters'
-import ShowMoreBtn from '@/app/components/ShowMoreBtn'
+import Projects from '@/app/components/home/Projects'
+import ProjectSearch from '@/app/components/home/ProjectSearch'
+import Filters from '@/app/components/home/Filters'
+import ShowMoreBtn from '@/app/components/home/ShowMoreBtn'
 import {HomeContext} from '@/services/contextAPI'
 
 export enum Status {

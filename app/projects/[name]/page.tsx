@@ -2,7 +2,7 @@ import '../../style/project.scss'
 import {Metadata} from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import Socials from '@/app/components/Socials'
+import Socials from '@/app/components/project/Socials'
 
 type Props = {
 	params: {name: string}
@@ -15,9 +15,7 @@ async function getData(name: string) {
 	return response.json()
 }
 
-export async function generateMetadata({
-	params: {name}
-}: Props): Promise<Metadata> {
+export async function generateMetadata({params: {name}}: Props): Promise<Metadata> {
 	return {title: `Ecosystem | ${name}`}
 }
 
@@ -27,13 +25,7 @@ export default async function Project({params: {name}}: Props) {
 	return (
 		<main className='container projectPage'>
 			<div className='projectBox'>
-				<Image
-					className='projectLogo'
-					src={project.image}
-					width={200}
-					height={200}
-					alt={`${project.name} logo`}
-				/>
+				<Image className='projectLogo' src={project.image} width={200} height={200} alt={`${project.name} logo`} />
 				<div className='projectInfo'>
 					<h1>{project.name}</h1>
 					<p>{project.sector}</p>
