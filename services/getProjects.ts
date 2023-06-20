@@ -1,5 +1,5 @@
 export const getProjects = async (size: string) => {
-	const response = await fetch(`http://localhost:3000/api/projects?s=${size}`)
+	const response = await fetch(`https://ecosystem-ten.vercel.app/api/projects?s=${size}`)
 	if (!response.ok) {
 		throw new Error('Unable to fetch projects.')
 	}
@@ -8,7 +8,7 @@ export const getProjects = async (size: string) => {
 }
 
 export const getProjectsBySearch = async (name: string) => {
-	const response = await fetch(`http://localhost:3000/api/projects?q=${name}`)
+	const response = await fetch(`https://ecosystem-ten.vercel.app/api/projects?q=${name}`)
 	if (!response.ok) {
 		throw new Error('Unable to fetch current project.')
 	}
@@ -17,7 +17,7 @@ export const getProjectsBySearch = async (name: string) => {
 }
 
 export const getProjectsByFilter = async (value: string) => {
-	const response = await fetch(`http://localhost:3000/api/projects?v=${value}`)
+	const response = await fetch(`https://ecosystem-ten.vercel.app/api/projects?v=${value}`)
 	if (!response.ok) {
 		throw new Error('Unable to fetch current filter.')
 	}
