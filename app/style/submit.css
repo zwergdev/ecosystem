@@ -138,12 +138,13 @@ label.typed, label.toTop {
 .submitBox .selectSectorBtn {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
   gap: 5px;
   padding: 10px;
   transition: all 0.5s ease-in-out;
 }
 .submitBox .selectSectorBtn.valueIsSelected {
-  padding: 13.6px 10px;
+  padding: 12.6px 10px;
 }
 .submitBox .selectSectorBtn.valueIsSelected:has(button) .selectSectorBtnValue:first-of-type {
   margin-top: 5px;

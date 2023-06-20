@@ -63,8 +63,8 @@ export default function Home() {
 				<HomeContext.Provider value={{status, setStatus, setProjects, setFilter, filter, projects}}>
 					<ProjectSearch />
 					<Filters />
-					{status !== Status.loading && <Projects />}
-					{filter === '' && status !== Status.search && <ShowMoreBtn />}
+					<Projects />
+					<ShowMoreBtn />
 				</HomeContext.Provider>
 			</section>
 		</main>

@@ -51,11 +51,12 @@
   .selectSectorBtn{
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     gap: 5px;
     padding: 10px;
     transition: all .5s ease-in-out;
     &.valueIsSelected{
-      padding: 13.6px 10px;
+      padding: 12.6px 10px;
       &:has(button) .selectSectorBtnValue:first-of-type{
         margin-top: 5px;
         padding-top: 5px;

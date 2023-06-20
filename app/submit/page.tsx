@@ -6,6 +6,7 @@ import DescriptionTextArea from '@/app/components/submit_project/DescriptionText
 import {useRouter} from 'next/navigation'
 import {useEffect, useState} from 'react'
 import {sendTelegramForm} from '@/services/telegram'
+import {FormContext} from '@/services/contextAPI'
 
 export type formValues = {
 	name: string
@@ -20,7 +21,6 @@ export type formValues = {
 }
 export default function () {
 	const router = useRouter()
-	const [triedToSend, setTriedToSend] = useState(false)
 	const [status, setStatus] = useState<string>('Submit')
 	const [formValues, setFormValues] = useState<formValues>({
 		name: '',
@@ -38,9 +38,6 @@ export default function () {
 		const {name, value} = event.target
 		setFormValues({...formValues, [name]: value})
 	}
-	const handleSectorChange = (event: any) => {
-		setFormValues({...formValues, sector: event.target.value})
-	}
 	const sendForm = async () => {
 		if (formValues.name && formValues.twitter && formValues.desc) {
 			const response = await sendTelegramForm(formValues)
@@ -50,7 +47,6 @@ export default function () {
 				setStatus('Server Error')
 			}
 		} else {
-			setTriedToSend(true)
 			setStatus('Check required lines')
 		}
 	}
@@ -63,16 +59,14 @@ export default function () {
 	return (
 		<main>
 			<div className='submitBox'>
-				<FormInputs handleInputChange={handleInputChange} formValues={formValues} triedToSend={triedToSend} />
-				<SelectSectorBtns handleSectorChange={handleSectorChange} sectorValue={formValues.sector} />
-				<DescriptionTextArea
-					handleInputChange={handleInputChange}
-					descValue={formValues.desc}
-					triedToSend={triedToSend}
-				/>
-				<button className='button' onClick={sendForm}>
-					{status}
-				</button>
+				<FormContext.Provider value={{formValues, handleInputChange, status}}>
+					<FormInputs />
+					<SelectSectorBtns />
+					<DescriptionTextArea />
+					<button className='button' onClick={sendForm}>
+						{status}
+					</button>
+				</FormContext.Provider>
 			</div>
 		</main>
 	)
