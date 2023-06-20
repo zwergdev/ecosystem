@@ -1,7 +1,8 @@
 import {formValues} from '@/app/submit/page'
+import {SITE_URL} from '@/services/getProjects'
 
 export const sendTelegramForm = async (formValues: formValues) => {
-	const response = await fetch(`https://ecosystem-ten.vercel.app/api/form`, {
+	const response = await fetch(`${SITE_URL}/api/form`, {
 		method: 'POST',
 		body: JSON.stringify(formValues)
 	})

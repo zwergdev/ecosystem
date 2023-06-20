@@ -4,10 +4,11 @@ import Footer from './components/general/Footer'
 import Image from 'next/image'
 import Header from './components/general/Header'
 import {ReactNode} from 'react'
+import {Metadata} from 'next'
 
 const jetBrains = JetBrains_Mono({subsets: ['latin']})
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: 'Zwerg Ecosystem',
 	description: 'Explore the Zwerg Ecosystem',
 	themeColor: 'black',
