@@ -3,7 +3,7 @@ import Image from 'next/image'
 import {Project} from '@/app/api/projects/projects'
 import {useContext} from 'react'
 import {HomeContext} from '@/services/contextAPI'
-import {Status} from '@/app/page'
+import {Status} from '@/services/types'
 
 export default function Projects() {
 	let {projects, status} = useContext(HomeContext)

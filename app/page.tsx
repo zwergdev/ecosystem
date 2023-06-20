@@ -7,17 +7,7 @@ import ProjectSearch from '@/app/components/home/ProjectSearch'
 import Filters from '@/app/components/home/Filters'
 import ShowMoreBtn from '@/app/components/home/ShowMoreBtn'
 import {HomeContext} from '@/services/contextAPI'
-
-export enum Status {
-	loading,
-	loaded,
-	show12,
-	show999,
-	fetching,
-	fetched,
-	filter,
-	search
-}
+import {Status} from '@/services/types'
 
 export default function Home() {
 	const [projects, setProjects] = useState<Project[]>([])

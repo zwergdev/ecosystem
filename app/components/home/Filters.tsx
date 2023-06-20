@@ -1,6 +1,6 @@
 import {MouseEvent, useContext} from 'react'
-import {Status} from '@/app/page'
 import {HomeContext} from '@/services/contextAPI'
+import {Status} from '@/services/types'
 
 const buttons = [{value: 'NFT'}, {value: 'DeFi'}, {value: 'Wallet'}, {value: 'Marketplace'}, {value: 'Media'}]
 

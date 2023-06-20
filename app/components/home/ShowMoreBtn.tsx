@@ -1,6 +1,6 @@
-import {Status} from '@/app/page'
 import {useContext} from 'react'
 import {HomeContext} from '@/services/contextAPI'
+import {Status} from '@/services/types'
 
 export default function ShowMoreBtn() {
 	let {status, setStatus, projects, filter} = useContext(HomeContext)

@@ -1,8 +1,8 @@
 import {ChangeEventHandler, useCallback, useContext, useEffect, useState} from 'react'
 import {getProjectsBySearch} from '@/services/getProjects'
 import debounce from 'lodash.debounce'
-import {Status} from '@/app/page'
 import {HomeContext} from '@/services/contextAPI'
+import {Status} from '@/services/types'
 
 const ProjectSearch = () => {
 	let {setProjects, setFilter, setStatus} = useContext(HomeContext)
