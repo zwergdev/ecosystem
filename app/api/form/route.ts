@@ -16,7 +16,8 @@ export async function POST(req: Request) {
 	Description: ${desc}`
 
 	const response = await fetch(
-		`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&parse_mode=html&text=${text}`
+		`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&parse_mode=html&text=${text}`,
+		{method: 'GET'}
 	).then(res => res.json())
 
 	return NextResponse.json(response)

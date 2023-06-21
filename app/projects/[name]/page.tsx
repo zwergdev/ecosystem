@@ -3,13 +3,14 @@ import {Metadata} from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Socials from '@/app/components/project/Socials'
+import {SITE_URL} from '@/services/getProjects'
 
 type Props = {
 	params: {name: string}
 }
 
 async function getData(name: string) {
-	const response = await fetch(`http://localhost:3000/api/projects/${name}`, {
+	const response = await fetch(`${SITE_URL}/api/projects/${name}`, {
 		cache: 'no-store'
 	})
 	return response.json()
