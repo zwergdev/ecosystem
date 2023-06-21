@@ -292,7 +292,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'Blur',
-		image: '/img/projects/Blur.jpg',
+		image: '/img/projects/blur.jpg',
 		sector: 'Marketplace',
 		rating: 'High',
 		socials: {

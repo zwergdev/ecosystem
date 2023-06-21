@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://ecosystem-git-main-zwergdev.vercel.app'
+export const SITE_URL = 'https://ecosystem-ten.vercel.app'
 
 export const getProjects = async (size: string) => {
 	const response = await fetch(`${SITE_URL}/api/projects?s=${size}`)
