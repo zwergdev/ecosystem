@@ -10,7 +10,7 @@ type Props = {
 
 async function getData(name: string) {
 	const response = await fetch(`http://localhost:3000/api/projects/${name}`, {
-		cache: 'no-cache'
+		cache: 'no-store'
 	})
 	return response.json()
 }
