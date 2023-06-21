@@ -5,7 +5,7 @@ import {useContext} from 'react'
 import {HomeContext} from '@/services/contextAPI'
 import {Status} from '@/services/types'
 
-export default function Projects() {
+export default function ProjectsList() {
 	let {projects, status} = useContext(HomeContext)
 
 	const rendered = () => {

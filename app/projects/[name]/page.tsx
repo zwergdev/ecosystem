@@ -4,20 +4,21 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Socials from '@/app/components/project/Socials'
 import {SITE_URL} from '@/services/getProjects'
+import React from 'react'
 
 type Props = {
 	params: {name: string}
 }
 
 async function getData(name: string) {
-	const response = await fetch(`${SITE_URL}/api/projects/${name}`, {
-		cache: 'no-store'
-	})
+	const response = await fetch(`${SITE_URL}/api/projects/${name}`)
 	return response.json()
 }
 
 export async function generateMetadata({params: {name}}: Props): Promise<Metadata> {
-	return {title: `Ecosystem | ${name}`}
+	const project = name.replace(/%20/g, ' ').replace(/(^|\s)\S/g, match => match.toUpperCase())
+
+	return {title: `Ecosystem | ${project}`}
 }
 
 export default async function Project({params: {name}}: Props) {

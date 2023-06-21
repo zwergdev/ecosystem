@@ -1,4 +1,4 @@
-import './style/style.scss'
+import './style/home.scss'
 import {JetBrains_Mono} from 'next/font/google'
 import Footer from './components/general/Footer'
 import Image from 'next/image'
@@ -35,7 +35,7 @@ export default function RootLayout({children}: {children: ReactNode}) {
 		<html lang='en'>
 			<body className={jetBrains.className}>
 				<div className='bgWrap'>
-					<Image src='/img/bg.jpg' width={1280} height={720} alt='background' />
+					<Image priority src='/img/bg.jpg' width={1280} height={720} alt='background' />
 				</div>
 				<Header />
 				{children}

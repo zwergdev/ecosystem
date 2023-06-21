@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@types/lodash.debounce": "^4.0.7",
-    "prettier": "2.8.8"
+    "prettier": "2.8.8",
+    "sass": "^1.63.6"
   }
 }
