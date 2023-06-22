@@ -26,7 +26,7 @@ header{
 /* <------------> */
 
 /* <------------> */
-/* MAIN */
+/* HOME */
 /* <------------> */
 
 main{
@@ -69,11 +69,11 @@ main{
 }
 
 /* <------------> */
-/* // MAIN */
+/* // HOME */
 /* <------------> */
 
 /* <------------> */
-/* PROJECTS */
+/* PROJECTS LIST */
 /* <------------> */
 
 .projects{
@@ -201,7 +201,107 @@ main{
 }
 
 /* <------------> */
-/* //PROJECTS */
+/* //PROJECTS LIST */
+/* <------------> */
+
+/* <------------> */
+/* PROJECT PAGE */
+/* <------------> */
+
+.projectPage{
+  padding: 50px 0;
+  min-height: calc(100vh - 185px);
+  .projectBox{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 1400px;
+    margin: auto auto 30px;
+    &.loading{
+      filter: blur(8px);
+      -webkit-filter: blur(8px);
+      -ms-filter: blur(8px);
+    }
+    .projectLogo{
+      border-radius: 50%;
+      &.loading{
+        max-width: 200px;
+        width: 100%;
+        height: 200px;
+        opacity: .5;
+        background: $white;
+      }
+    }
+    .projectInfo{
+      padding-right: 30px;
+      border-right: 1px solid rgba(255, 255, 255, 0.45);
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 15px;
+      h1{
+        text-align: left;
+        font-size: 50px;
+      }
+      p{
+        font-size: 20px;
+      }
+      .socials{
+        display: flex;
+        gap: 30px;
+        &.loading{
+          opacity: .5;
+          span{
+            height: 30px;
+            width: 30px;
+            background-color: $white;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+    .projectDesc{
+      text-align: left;
+      font-size: 20px;
+      line-height: 130%;
+    }
+  }
+  .button.back{
+    max-width: max-content;
+    margin: auto;
+    text-align: center;
+    &.loading{
+      animation: blinking 1s ease-in-out infinite;
+    }
+  }
+  @include max-screen(1100px){
+    .projectBox{
+      flex-wrap: wrap;
+      .projectInfo{
+        border-right: none;
+        padding-right: 0;
+      }
+      .projectDesc{
+        border-top: 1px solid rgba(255, 255, 255, 0.45);
+        padding-top: 30px;
+      }
+    }
+  }
+  @include max-screen(700px){
+    .projectBox{
+      justify-content: center;
+      .projectInfo{
+        align-items: center;
+        h1{
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+/* <------------> */
+/* //PROJECT PAGE */
 /* <------------> */
 
 /* <------------> */

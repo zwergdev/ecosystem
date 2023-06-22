@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 		title: 'Zwerg Ecosystem',
 		description: 'Explore the Zwerg Ecosystem',
 		url: 'https://nextjs.org',
-		siteName: 'Next.js',
+		siteName: 'Ecosystem Template',
 		locale: 'en_US',
 		type: 'website'
 	},
@@ -35,7 +35,7 @@ export default function RootLayout({children}: {children: ReactNode}) {
 		<html lang='en'>
 			<body className={jetBrains.className}>
 				<div className='bgWrap'>
-					<Image priority src='/img/bg.jpg' width={1280} height={720} alt='background' />
+					<Image priority={true} src='/img/bg.jpg' width={1280} height={720} alt='background' />
 				</div>
 				<Header />
 				{children}
