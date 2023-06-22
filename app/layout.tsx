@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: 'Zwerg Ecosystem',
 		description: 'Explore the Zwerg Ecosystem',
-		url: 'https://nextjs.org',
+		url: 'https://ecosystem-ten.vercel.app',
 		siteName: 'Ecosystem Template',
 		locale: 'en_US',
 		type: 'website'
